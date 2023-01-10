@@ -12,6 +12,7 @@ $cat = new Genre("Cat");
 
 $Foods =[
     new Food("Royal Canin","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food"),
+    new Food("Royal Canin","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food"),
     new Food("Royal Canin","20 €", $dog, "https://www.whiskas.it/sites/g/files/fnmzdf2106/files/2022-11/MicrosoftTeams-image%20%2811%29.png", "Food"),
 
 ];
@@ -35,15 +36,23 @@ $Foods =[
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="mb-5">Prodotti</h1>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+    <div class="container ">
+
+        <h1 class="mb-5">Food for pets</h1>
+        <div class="row">
+            <?php foreach( $Foods as $food ){ ?>
+            <div class="card col-3">
+                <img src="<?php echo $food->immagine ?>" class="card-img-top" style="height: 100%; object-fit: cover;"
+                    alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
             </div>
+            <?php } ?>
         </div>
+
+
     </div>
 </body>
 
