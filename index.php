@@ -10,9 +10,12 @@ require_once __DIR__."/Food.php";
 $dog = new Genre("Dog");
 $cat = new Genre("Cat");
 
+$Foods =[
+    new Food("Royal Canin","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food"),
+    new Food("Royal Canin","20 €", $dog, "https://www.whiskas.it/sites/g/files/fnmzdf2106/files/2022-11/MicrosoftTeams-image%20%2811%29.png", "Food"),
 
-$kibble= new Food("kibble","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food");
-var_dump($kibble);
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +36,7 @@ var_dump($kibble);
 
 <body>
     <div class="container">
+        <h1 class="mb-5">Prodotti</h1>
         <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
