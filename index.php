@@ -3,20 +3,9 @@
 - I prodotti sono categorizzati, le categorie sono Cani o Gatti.
 - I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
 Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
+
 <?php
-require_once __DIR__."/Category.php";
-require_once __DIR__."/Food.php";
-
-$dog = new Genre("Dog");
-$cat = new Genre("Cat");
-
-$Foods =[
-    new Food("Royal Canin","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food"),
-    new Food("Royal Canin","20 €", $dog, "https://i.ebayimg.com/images/g/JgkAAOSw~gxfaxba/s-l500.jpg", "Food"),
-    new Food("Royal Canin","20 €", $dog, "https://www.whiskas.it/sites/g/files/fnmzdf2106/files/2022-11/MicrosoftTeams-image%20%2811%29.png", "Food"),
-
-];
-
+require_once __DIR__."/Generator.php"; 
 ?>
 
 <!DOCTYPE html>
@@ -37,16 +26,47 @@ $Foods =[
 
 <body>
     <div class="container ">
-
-        <h1 class="mb-5">Food for pets</h1>
+        <h1 class="text-center">PRODUCTS FOR PETS</h1>
+        <h1 class="mt-5 mb-5">Food for pets</h1>
         <div class="row">
             <?php foreach( $Foods as $food ){ ?>
-            <div class="card col-3">
+            <div class="card col-4">
                 <img src="<?php echo $food->immagine ?>" class="card-img-top" style="height: 100%; object-fit: cover;"
                     alt="...">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <h2><?php echo $food->name ?></h2>
+                    <h3>Category: <?php echo $food->category->name ?></h3>
+                    <h4>Price: <?php echo $food->price ?></h4>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+
+        <h1 class="mt-5 mb-5">Toys for pets</h1>
+        <div class="row">
+            <?php foreach( $Toys as $toy ){ ?>
+            <div class="card col-4">
+                <img src="<?php echo $toy->immagine ?>" class="card-img-top" style="height: 100%; object-fit: cover;"
+                    alt="...">
+                <div class="card-body">
+                    <h2><?php echo $toy->name ?></h2>
+                    <h3>Category: <?php echo $toy->category->name ?></h3>
+                    <h4>Price: <?php echo $toy->price ?></h4>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+
+        <h1 class="mt-5 mb-5">Kennels for pets</h1>
+        <div class="row">
+            <?php foreach( $Kennels as $kennel ){ ?>
+            <div class="card col-4">
+                <img src="<?php echo $kennel->immagine ?>" class="card-img-top" style="height: 100%; object-fit: cover;"
+                    alt="...">
+                <div class="card-body">
+                    <h2><?php echo $kennel->name ?></h2>
+                    <h3>Category: <?php echo $kennel->category->name ?></h3>
+                    <h4>Price: <?php echo $kennel->price ?></h4>
                 </div>
             </div>
             <?php } ?>
